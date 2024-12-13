@@ -1,0 +1,32 @@
+[
+    {
+      "title": "My Clip 1",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ",
+      "start": "star/3start.png",
+      "source_clip": "sources/myclip1.mp4"
+    },
+    {
+      "title": "My Clip 2",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ",
+      "start": "star/3start.png",
+      "source_clip": "sources/myclip2.mp4"
+    },
+    {
+      "title": "My Clip 3",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ",
+      "start": "star/3start.png",
+      "source_clip": "sources/myclip3.mp4"
+    },
+    {
+      "title": "My Clip 4",
+      "description": "A new clip added to demonstrate dynamic functionality of this JSON file.",
+      "start": "star/4start.png",
+      "source_clip": "sources/myclip4.mp4"
+    },
+    {
+      "title": "My Clip 5",
+      "description": "Another new clip added for showcasing extended functionality.",
+      "start": "star/5start.png",
+      "source_clip": "sources/myclip5.mp4"
+    }
+  ]

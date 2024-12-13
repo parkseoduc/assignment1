@@ -1,70 +1,49 @@
-// // App.js
-// import React from 'react';
-// import './App.css';
-// import './Weather.js'
 
-// function App() {
-//   return (
-//     <div className="weather-container">
-//       <div className="weather-icon">
-//         <span role="img" aria-label="cloud">
-//           ☁️
-//         </span>
-//       </div>
-//       <div className="weather-info">
-//         <div className="temperature">
-//           26<span className="degree-symbol">°C</span>
-//         </div>
-//         <div className="details">
-//           <p>Precipitation: 5%</p>
-//           <p>Humidity: 61%</p>
-//           <p>Wind: 13 km/h</p>
-//         </div>
-//       </div>
-//       <div className="weather-summary">
-//         <p>Weather</p>
-//         <p>Wednesday 11:00</p>
-//         <p>Cloudy</p>
-//       </div>
-//     </div>
-//   );
-// }
+import React from "react";
+import clips from "./MyClip.json";
 
-// export default App;
-// App.js
-import React from 'react';
-import useWeather from './Weather';
-import './App.css';
+
 
 function App() {
-  const { weatherData, loading, error } = useWeather('Hanoi'); // Thành phố mặc định: Hà Nội
-
-  if (loading) return <div className="loading">Loading...</div>;
-  if (error) return <div className="error">Error: {error}</div>;
-
   return (
-    <div className="weather-container">
-      <div className="weather-icon">
-        <span role="img" aria-label="cloud">
-          ☁️
-        </span>
-      </div>
-      <div className="weather-info">
-        <div className="temperature">
-          {Math.round(weatherData.main.temp)}
-          <span className="degree-symbol">°C</span>
+    <div style={{ fontFamily: "Arial, sans-serif" }}>
+      <header style={{ background: "#0000FF", color: "#fff", padding: "1rem", textAlign: "center" }}>
+        <h1>APTECH STUDIO </h1>
+      </header>
+      <h1> My Clip </h1>
+      <main style={{ padding: "2rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
+          {clips.map((clip, index) => (
+            <div
+              key={index}
+              style={{
+                border: "1px solid #ccc",
+                borderRadius: "8px",
+                padding: "1rem",
+                background: "#f9f9f9",
+              }}
+            >
+              <h2>{clip.title}</h2>
+              <p>{clip.description}</p>
+              <img
+                src={clip.start}
+                alt={`Thumbnail of ${clip.title}`}
+                style={{ width: "100%", borderRadius: "4px" }}
+              />
+              <video
+                controls
+                style={{ width: "100%", marginTop: "1rem", borderRadius: "4px" }}
+              >
+                <source src={clip.source_clip} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          ))}
         </div>
-        <div className="details">
-          <p>Precipitation: {weatherData.clouds.all}%</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
-          <p>Wind: {Math.round(weatherData.wind.speed)} km/h</p>
-        </div>
-      </div>
-      <div className="weather-summary">
-        <p>Weather</p>
-        <p>{new Date().toLocaleString()}</p>
-        <p>{weatherData.weather[0].description}</p>
-      </div>
+      </main>
+      <footer style={{ background: "#0000FF", color: "#fff", textAlign: "center", padding: "1rem" }}>
+        <p>&copy; 2024 MyClip App</p>
+      </footer>
     </div>
   );
 }
